@@ -595,9 +595,9 @@ In this task, we will create a document and send an email to demonstrate the fun
 
 	![bxz190x2.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/bxz190x2.jpg)
 
-1. In your email, note that you will be unable to open this message.  This experience will vary depending on the client you use (the image below is from Outlook 2016 for Mac) but they should have similar messages after presenting credentials. Since this is not the best experience for the recipient, in Exercise 4, we will configure Exchange Online Mail Flow Rules to prevent content classified with internal only labels from being sent to external users.
+	> INFO: In your email, note that you will be unable to open this message.  This experience will vary depending on the client you use (the image below is from Outlook 2016 for Mac) but they should have similar messages after presenting credentials. Since this is not the best experience for the recipient, in Exercise 4, we will configure Exchange Online Mail Flow Rules to prevent content classified with internal only labels from being sent to external users.
 
-	![52hpmj51.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/52hpmj51.jpg)
+	>![52hpmj51.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/52hpmj51.jpg)
 
 
 
@@ -773,6 +773,8 @@ In this task, we will configure a mail flow rule to detect credit card informati
 # Demonstrating Exchange Online Mail Flow Rules
 
 In this task, we will send emails to demonstrate the results of the Exchange Online mail flow rules we configured in the previous task.  This will demonstrate some ways to protect your sensitive data and ensure a positive user experience with the product.
+
+> NOTE: Some of the steps in the exercise may be unnecessary if you do not have DLP rules configured for Credit Cards.  If that is the case, simply skip over those steps.
 
 1. Switch to Client3.
 1. In Microsoft Outlook, click on the **New email** button.
@@ -1107,7 +1109,7 @@ Now that you have installed the scanner, you need to get an Azure AD token for t
    ```
    "Set-AIPAuthentication -WebAppID " + $WebApp.AppId + " -WebAppKey " + $WebAppKey.Guid + " -NativeAppID " + $NativeApp.AppId | Out-File C:\Scripts\Set-AIPAuthentication.txt
 	```
-1. Type **Start c:\Scripts\Set-AIPAuthentication.txt** and copy the command to the clipboard.
+1. Type **Start c:\Scripts\Set-AIPAuthentication.txt** and press **Enter**, then **copy the command** to the clipboard.
 1. Click on the Start menu and type **PowerShell**, right-click on the PowerShell program, and click **Run as a different user**.
 
 	![zgt5ikxl.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/zgt5ikxl.jpg)
