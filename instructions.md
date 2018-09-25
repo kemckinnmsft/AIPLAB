@@ -36,8 +36,10 @@ This lab was developed for use in a structured VM environment with the following
 	- Provisioned On-Premises admin account named **Contoso\Install** with the password **Somepass1**
 	- Provisioned On-Premises AIP Scanner account named **Contoso\AIPScanner** with the password **Somepass1**
 	- DNS **CNAME** entry pointing **Fileserver**.contoso.com to **SP1**.contoso.com
-- Member Server running SQL Server 2014+ (SQL1)
+- Member Server running SQL Server 2016+ (SQL1)
 	- Azure Information Protection client (1.37.19.0) (Available at https://aka.ms/AIPClient)
+	- Contoso\AIPScanner account should be **local admin** of this server
+	- Contoso\AIPScanner should have **sysadmin** rights on the SQL server
 - Member Server running SharePoint 2016 (SP1)
 	- Demo PII content deployed to a document library at http://sp1/documents and in a fileshare shared as \\sp1\documents (\\fileserver\documents)
 	- Test PII content is available at https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/PII.zip
@@ -485,7 +487,7 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 
 # Configuring Exchange Online Mail Flow Rules
 
->NOTE: This may is unnecessary if using your own tenant but may be necessary using demos.microsoft.com tenants. If the rule does not exist, move to the next exercise.
+>NOTE: This task is unnecessary if using your own tenant but may be necessary using demos.microsoft.com tenants. If the rule does not exist, move to the next exercise.
 
 1. Switch to Client1.
 
@@ -536,7 +538,7 @@ One of the most common use cases for AIP is the ability to send emails using Use
 	>
 	> ![6v6duzbd.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/6v6duzbd.jpg)
 
-1. Switch over to SQL1 or Client2 and review the email in Alan or Amy’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
+1. Switch over to Client1 or Client2 and review the email in Alan or Amy’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
 
 	![0xby56qt.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/0xby56qt.jpg)
 
@@ -589,7 +591,7 @@ In this task, we will create a document and send an email to demonstrate the fun
 1. Click on **Confidential** and then **Contoso Internal** and click **Send**.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/yhokhtkv.jpg)
-1. On SQL1 or Client2, observe that you are able to open the email natively in the Outlook client. Also observe the **header text** that was defined in the label settings.
+1. On Client1 or Client2, observe that you are able to open the email natively in the Outlook client. Also observe the **header text** that was defined in the label settings.
 
 	![bxz190x2.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/bxz190x2.jpg)
 
@@ -603,7 +605,7 @@ In this task, we will create a document and send an email to demonstrate the fun
 
 In this task, we will create a document and send an email from one of the users in the Legal group to demonstrate the functionality defined in the first exercise. We will also show the behavior of the No Default Label policy on documents.
 
-1. Switch to SQL1.
+1. Switch to Client1.
 1. In Microsoft Outlook, click on the **New email** button.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/ldjugk24.jpg)
@@ -675,7 +677,7 @@ Exchange Online can work in conjunction with Azure Information Protection to pro
 
 In this task, we will configure a mail flow rule to detect credit card information traversing the network in the clear and encrypt it using the Encrypt Only RMS Template.  We will also create a mail flow rule to prevent messages classified as Confidential \ Contoso Internal from being sent to external recipients.
 
-1. Switch to SQL1 and restore the **Exchange admin center** browser window.
+1. Switch to Client1 and restore the **Exchange admin center** browser window.
 
 	> NOTE: If you closed the window, open an Edge InPrivate window and navigate to **https://outlook.office365.com/ecp/** and log in using **your Global Admin Username** and **your Global Admin Password**.
 
@@ -781,7 +783,7 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 
 	> INFO: Notice that there is a policy tip that has popped up to inform you that there is a credit card number in the email and it is being shared outside the organization.  This type of policy tip can be defined with the Office 365 Security and Compliance center and was pre-staged in the demo tenants we are using.
 
-1. Switch to SQL1 and review the received email.
+1. Switch to Client1 and review the received email.
 
 	![pidqfaa1.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/pidqfaa1.jpg)
 
@@ -1033,6 +1035,8 @@ In this task, we will connect to Azure AD Powershell using the provided tenant c
 
 1. Now, we can create the cloud service account using the command below.
 
+	>WARNING: Ensure you replace **yourtenant.onmicrosoft.com** with valid tenant information or this command **WILL** fail.
+
     **New-AzureADUser -AccountEnabled $True -DisplayName "AIP Scanner Cloud Service" -PasswordProfile $PasswordProfile -MailNickName "AIPScanner" -UserPrincipalName "AIPScanner@yourtenant.onmicrosoft.com"**
 
 
@@ -1042,8 +1046,8 @@ In this task, we will connect to Azure AD Powershell using the provided tenant c
 The first step in configuring the AIP Scanner is to install the service and connect the database.  This is done with the Install-AIPScanner cmdlet that is provided by the AIP Client software.  The AIPScanner service account has been pre-staged in Active Directory for convenience.
 
 1. At the PowerShell prompt, type **$SQL = "SQL1"**
-1. Next, type **Install-AIPScanner -SQLServerInstance $SQL** and press **Enter**.
-1. When prompted, provide the credentials for the AIP scanner service account.
+2. Next, type **Install-AIPScanner -SQLServerInstance $SQL** and press **Enter**.
+3. When prompted, provide the credentials for the AIP scanner service account.
 
 	**Contoso\AIPScanner**
 
@@ -1109,6 +1113,8 @@ Now that you have installed the scanner, you need to get an Azure AD token for t
 	![zgt5ikxl.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/zgt5ikxl.jpg)
 1. When prompted, enter the username **Contoso\AIPScanner** and password **Somepass1** and click **OK**.
 1. Paste the copied Set-AIPAuthentication command into this window and run it.
+
+	>WARNING: Ensure you replace **yourtenant.onmicrosoft.com** with valid tenant information or this command **WILL** fail.
 1. When prompted, enter the user **AIPScanner@yourtenant.onmicrosoft.com** and the password **Somepass1**
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/qfxn64vb.jpg)
