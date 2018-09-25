@@ -67,12 +67,12 @@ In this task, we will configure a label protected for internal audiences that ca
 1. Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
 
 	![jnblioyn.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/jnblioyn.jpg)
-	
+
 1. In the InPrivate window, navigate to **https://portal.azure.com/**
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/cznh7i2b.jpg)
 
-1. Log in using **your Global Admin Username** and the password **your Global Admin Password**.
+1. Log in using **your Global Admin Username** and **your Global Admin Password**.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/gerhxqeq.jpg)
 
@@ -123,7 +123,7 @@ In this task, we will configure a label protected for internal audiences that ca
 	| Header color     | Purple           |
 	| Header alignment | Center           |
 
-	> [!NOTE] These are sample values to demonstrate marking possibilities and **NOT** a best practice.
+	> NOTE: These are sample values to demonstrate marking possibilities and **NOT** a best practice.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/0vdoc6qb.jpg)
 
@@ -169,7 +169,9 @@ In this task, we will assign the new sub-label to the Global policy and configur
 
 1. In the Policy: Global blade, below the labels, click **Add or remove labels**.
 
-1. In the Policy: Add or remove labels blade, check the boxes next to **All Labels except the last 3** and click **OK**.
+1. In the Policy: Add or remove labels blade, verify that all of the labels are assigned to the policy by checking the boxes next to the label names and clicking **OK**.
+
+	>NOTE: If you are creating your own tenant, you may need to create labels like the ones shown in the pictures (the ones we will use in this lab are the Confidential\Recipients Only, Confidential\Contoso Internal, and Highly Confidential\All Employees labels so you will need those at a minimum).
 
 	![d0pxo2m6.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/d0pxo2m6.jpg)
 
@@ -227,7 +229,7 @@ Now that you have learned how to work with global labels and policies, we will c
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/uishk9yh.jpg)
 
-	> [!Note] In a production environment, you will typically use a synced or Azure AD Group rather than choosing individuals.
+	> NOTE: In a production environment, you will typically use a synced or Azure AD Group rather than choosing individuals.
 
 1. In the Add permissions blade, click **OK**.
 
@@ -337,7 +339,7 @@ One of the most powerful features of Azure Information Protection is the ability
 1. In the Label: All Employees blade, scroll down to the **Configure conditions for automatically applying this label** section, and click on **+ Add a new condition**.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/8cdmltcj.jpg)
-1. In the Condition blade, click on **Custom** and enter **Password** for the **Name** and in the textbox below **Match exact phrase or pattern**, type **pass@word1**.
+1. In the Condition blade, click on **Custom** and enter **Password** for the **Name** and in the textbox below **Match exact phrase or pattern**, type **your user password**.
 
 	![ra7dnyg6.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/ra7dnyg6.jpg)
 1. Click **Save** in the Condition blade and **OK** to the Save settings prompt.
@@ -368,22 +370,18 @@ We will also be disabling a mail flow rule in the Exchange Admin Center to allow
 
 In this task, we will configure Word and Outlook for 3 test users.  These users are Alan Steiner (AlanS) and Amy Alberts (AmyA) who we have defined as members of the Legal group, and Eric Grimes (EricG).  This will allow us to demonstrate the differences between the global and scoped policy and demonstrate some of the protection features of Azure Information Protection in the next exercise.
 
-1. On SQL1, minimize the Edge window and launch **Microsoft Word** (This may take a few seconds).
-
-	> NOTE: If the automation does not work, start **Microsoft Word** by clicking on the icon in the taskbar.
-	>
-	>![pxyal6hb.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/pxyal6hb.jpg)
+1. On **CLIENT1**, minimize the Edge window and launch **Microsoft Word**.
 
 	> INFO: When Word opens, you may see a prompt to log into **Microsoft Azure Information Protection**.  You may **close this** and continue.  Azure Information Protection will automatically inherit the settings from Word after reloading.
 	>
 	> ![3gm9oeee.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/3gm9oeee.jpg)
 
-1. In the Sign in set up Office dialog, click Sign in.
+2. In the Sign in set up Office dialog, click Sign in.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/4yb3mnd1.jpg)
 1. In the Activate Office dialog, enter **AlanS@yourtenant.onmicrosoft.com** and press **Next**.
 
-1. In the Enter password dialog, enter **pass@word1** and click **Sign in**.
+1. In the Enter password dialog, enter **your user password** and click **Sign in**.
 
 1. In the Use this account everywhere on your device dialog, click **Yes**.
 
@@ -421,7 +419,7 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/4yb3mnd1.jpg)
 1. In the Activate Office dialog, enter **AmyA@yourtenant.onmicrosoft.com** and press **Next**.
 
-1. In the Enter password dialog, enter **pass@word1** and click **Sign in**.
+1. In the Enter password dialog, enter **your user password** and click **Sign in**.
 
 1. In the Use this account everywhere on your device dialog, click **Yes**.
 
@@ -459,7 +457,7 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/4yb3mnd1.jpg)
 1. In the Activate Office dialog, enter **EricG@yourtenant.onmicrosoft.com** and press **Next**.
 
-1. In the Enter password dialog, enter **pass@word1** and click **Sign in**.
+1. In the Enter password dialog, enter **your user password** and click **Sign in**.
 
 1. In the Use this account everywhere on your device dialog, click **Yes**.
 
@@ -495,7 +493,7 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 	>![jnblioyn.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/jnblioyn.jpg)
 	>In the InPrivate window, navigate to **https://outlook.office365.com/ecp/**.
 
-1. Log in using **your Global Admin Username** and the password **your Global Admin Password**.
+1. Log in using **your Global Admin Username** and **your Global Admin Password**.
 
 1. In the Exchange admin center, click on **mail flow** on the left, then uncheck the box next to **Delete if sent outside the organization**.
 
@@ -637,7 +635,7 @@ In this task, we will test the configured recommended and automatic conditions w
 1. Switch to Client3 and launch **Microsoft Word**.
 1. In Microsoft Word, create a new **Blank document** and type **My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368** and **save** the document.
 
-	> [!NOTE] This card number is a fake number that was generated using the Credit Card Generator for Testing at https://developer.paypal.com/developer/creditCardGenerator/.  The Microsoft Classification Engine uses the Luhn Algorithm to prevent false positives so when testing, please make sure to use valid numbers.
+	> NOTE: This card number is a fake number that was generated using the Credit Card Generator for Testing at https://developer.paypal.com/developer/creditCardGenerator/.  The Microsoft Classification Engine uses the Luhn Algorithm to prevent false positives so when testing, please make sure to use valid numbers.
 
 1. Notice that you are prompted with a recommendation to change the classification to Confidential \ Contoso Internal. Click on **Change now** to set the classification and protect the document.
 
@@ -678,7 +676,7 @@ In this task, we will configure a mail flow rule to detect credit card informati
 
 1. Switch to SQL1 and restore the **Exchange admin center** browser window.
 
-	> NOTE: If you closed the window, @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://outlook.office365.com/ecp/`) to open an Edge InPrivate window and navigate to **https://outlook.office365.com/ecp/** and log in using **your Global Admin Username** and the password **your Global Admin Password**.
+	> NOTE: If you closed the window, @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://outlook.office365.com/ecp/`) to open an Edge InPrivate window and navigate to **https://outlook.office365.com/ecp/** and log in using **your Global Admin Username** and **your Global Admin Password**.
 
 1. Ensure you are under **mail flow** > **rules**, then click on the **plus icon** and click **Create a new rule...**
 
@@ -794,7 +792,7 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 	>
 	>![599ljwfy.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/599ljwfy.jpg)
 
-	>[!NOTE] Note that you have received a message from your DLP policy stating that the email was not sent to the external recipient because it contained a credit card number.
+	>NOTE: Note that you have received a message from your DLP policy stating that the email was not sent to the external recipient because it contained a credit card number.
 
 1. On Client 1, @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://protection.office.com`) to open an Edge InPrivate window to **https://protection.office.com**.
 1. In the Security and Compliance Center, expand **Data loss prevention** and click on **Policy**.  Then, in the Policy blade, click on the **Default Office 365 DLP Policy**.
@@ -854,7 +852,7 @@ In this task, we will enable Information Rights Management in SharePoint Online.
 
 1. @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://admin.microsoft.com/AdminPortal/Home#/homepage`) to launch an Edge InPrivate session to **https://admin.microsoft.com/AdminPortal/Home#/homepage**.
 
-1. If needed, log in using **your Global Admin Username** and the password **your Global Admin Password**.
+1. If needed, log in using **your Global Admin Username** and **your Global Admin Password**.
 
 1. Hover over the **Admin centers** section of the bar on the left and choose **SharePoint**.
 
@@ -940,7 +938,7 @@ Create an unprotected Word document, label it as Internal, and upload it to the 
 1. launch **Microsoft Word**.
 1. Create a new **Blank document**.
 
-	>[!NOTE] Notice that by default the document is labeled as the unprotected classification **General**.
+	>NOTE: Notice that by default the document is labeled as the unprotected classification **General**.
 
 1. In the Document, type **This is a test document**.
 
@@ -950,7 +948,7 @@ Create an unprotected Word document, label it as Internal, and upload it to the 
 	![m95ixvv1.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/m95ixvv1.jpg)
 1. Navigate to the location where you saved the document, select it and click **Open** to upload the file.
 
-	>[!NOTE] Note that despite this document being labeled, the Sensitivity is not listed.
+	>NOTE: Note that despite this document being labeled, the Sensitivity is not listed.
 
 1. To resolve this, on the right-hand side of the document library, click on the **+ Add column** header and click on **More...**.
 
@@ -961,7 +959,7 @@ Create an unprotected Word document, label it as Internal, and upload it to the 
 1. In the document library, click on the **Show actions** button to the right of the uploaded document and click **Delete**.
 
 	![gt7sjulo.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/gt7sjulo.jpg)
-	>[!Note] This is only necessary to expedite the appearance of the Sensitivity metadata.  In production, this would be unnecessary.
+	>NOTE: This is only necessary to expedite the appearance of the Sensitivity metadata.  In production, this would be unnecessary.
 1. Re-upload the document and you will see that the Sensitivity column is populated.
 
 	![0yr96t56.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/0yr96t56.jpg)
@@ -995,7 +993,7 @@ Files that are uploaded to a SharePoint IRM protected document library are prote
 1. After the document opens, you will be able to observer that it is protected.  Click on the View Permissions button to review the restrictions set on the document.
 
 	![4uya6mro.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/4uya6mro.jpg)
-	>[!NOTE] These permissions are based on the level of access that they user has to the document library.  In a production environment most users would likely have less rights than shown in this example.
+	>NOTE: These permissions are based on the level of access that they user has to the document library.  In a production environment most users would likely have less rights than shown in this example.
 
 
  
@@ -1005,7 +1003,7 @@ The Azure Information Protection scanner allows you to discover and optionally c
 
 In this exercise, you will use PowerShell Scripts to create an account for scanner in your tenant, install the AIP scanner, and acquire an authentication token for the AIP scanner to use. Once the scanner is prepared, you will run a full discovery and then finally classify and protect identified sensitive data.
 
-> [!NOTE] This exercise is based on the September GA version of the AIP scanner (1.37.19.0). The AIP client and Azure AD PowerShell cmdlets have been installed on SQL1 to save time.
+> NOTE: This exercise is based on the September GA version of the AIP scanner (1.37.19.0). The AIP client and Azure AD PowerShell cmdlets have been installed on SQL1 to save time.
 
 ![7fs9fx6b.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/7fs9fx6b.jpg)
 
@@ -1138,7 +1136,7 @@ In this task, we will review documents in SharePoint and a file share to show th
 
 
 
-	> [!NOTE] Observe that although there is Credit Card or SSN data in these documents, they are still unprotected and classified as General. You can also see these same documents on a file share at \\fileserver\documents in their unprotected state.  Close any opened documents **without saving**.
+	> NOTE: Observe that although there is Credit Card or SSN data in these documents, they are still unprotected and classified as General. You can also see these same documents on a file share at \\fileserver\documents in their unprotected state.  Close any opened documents **without saving**.
 	>
 	>![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/htd29fpf.jpg)
 
@@ -1153,12 +1151,12 @@ Now that the AIP Scanner has been fully installed and authenticated, we can take
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/jltma5e0.jpg)
 
-	> [!NOTE] Notice that the scanner starts in an **Idle** state.
+	> NOTE: Notice that the scanner starts in an **Idle** state.
 1. Next, type **Get-AIPScannerConfiguration** and **Enter**.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/bso8342f.jpg)
 
-	> [!NOTE] Review the settings here.  Note that **Enforce** is **Off** by default, the **Schedule** is set to **Manual**, and **DiscoverInformationTypes** is set to **PolicyOnly**.
+	> NOTE: Review the settings here.  Note that **Enforce** is **Off** by default, the **Schedule** is set to **Manual**, and **DiscoverInformationTypes** is set to **PolicyOnly**.
 	>
 	>This means that once I configure repositories, if I run`Start-AIPScan`the scanner would **run once**, would **identify sensitive data based only on Automatic conditions I have configured** in the portal, and if it found those, **it would not classify or protect those files**.  Over the next several tasks we will modify these settings to change the functionality of the scanner.
 
@@ -1168,7 +1166,7 @@ Now that the AIP Scanner has been fully installed and authenticated, we can take
 
 In this task, we will configure repositories to be scanned by the AIP scanner.  As previously mentioned, these can be any type of CIFS file shares including NAS devices sharing over the CIFS protocol.  Additionally, On premises SharePoint 2010, 2013, and 2016 document libraries and lists (attachements) can be scanned.  You can even scan entire SharePoint sites by providing the root URL of the site.  There are several optional
 
-> [!NOTE] SharePoint 2010 is only supported for customers who have extended support for that version of SharePoint.
+> NOTE: SharePoint 2010 is only supported for customers who have extended support for that version of SharePoint.
 
 The next task is to configure repositories to scan.  These can be on-premises SharePoint 2010, 2013, or 2016 document libraries and any accessible CIFS based share.
 
@@ -1212,7 +1210,7 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/dy6mnnpv.jpg)
 
-	>[!NOTE] You will see an event like the one below when the scanner completes the cycle.
+	>NOTE: You will see an event like the one below when the scanner completes the cycle.
 	>
 	>![o46iabfu.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/o46iabfu.jpg)
 
@@ -1300,7 +1298,7 @@ Now that we have Classified and Protected documents using the scanner, we can re
 
 
 
-	> [!NOTE] Observe that the same document is now classified as Confidential \ Contoso Internal. You can also see these same documents on a file share at \\fileserver\documents in their new protected state.
+	> NOTE: Observe that the same document is now classified as Confidential \ Contoso Internal. You can also see these same documents on a file share at \\fileserver\documents in their new protected state.
 	>
 	>![s1okfpwu.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/s1okfpwu.jpg)
 
