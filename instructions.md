@@ -64,13 +64,13 @@ In this task, we will configure a label protected for internal audiences that ca
 
 1. Switch to the Client1 virtual machine.
 
-2. Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
-	>
-	>![jnblioyn.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/jnblioyn.jpg)
-	>
-	> In the InPrivate window, navigate to **https://portal.azure.com/**
-	>
-	>![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/cznh7i2b.jpg)
+1. Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
+
+	![jnblioyn.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/jnblioyn.jpg)
+	
+1. In the InPrivate window, navigate to **https://portal.azure.com/**
+
+	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/cznh7i2b.jpg)
 
 1. Log in using **your Global Admin Username** and the password **your Global Admin Password**.
 
