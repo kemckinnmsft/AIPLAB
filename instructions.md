@@ -46,63 +46,25 @@ This lab was developed for use in a structured VM environment with the following
 
 Microsoft 365 E5 Tenant credentials will be necessary to run through all of the exercises included in this lab.  If you have access to https://demos.microsoft.com, you may use a tenant provisioned there, or your own trial/POC Microsoft 365 Tenant. The users referenced in this guide are based on demo tenants provided at Microsoft events.  Please feel free to use any 3 users in your demo tenant to complete the exercises.
 
-===
+### Reporting Errors
 
-# Tips and Tricks
+This is a living document and was developed from lab content so it is possible that some of the screenshots or references are not perfectly translated.  If you run into any issues in this document or the instructions do not work because of changes in the Azure interface, please reach out to me by clicking on the link below. I will make every effort to ensure that the information contained in this document are up-to-date and relevant but constructive criticism is always appreciated.
 
-There are a few extras throughout this lab that are designed to make your lab experience a smooth and simple process.  Below are some icons you should watch out for that will save you time during each task.
-
-## Interactive Elements
-
-- Each task contains a series of steps required for successful completion of the lab.  To track your progress throughout the lab, check the box to the left of the numbered series.
-
-	![6mfi1ekm.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/6mfi1ekm.jpg)
-- After you check each box, you will see your lab progress at the bottom of the instruction pane.
-
-	![0ggu265u.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/0ggu265u.jpg)
-- When you see an instruction for switching computers, click on the **blue link** in the text to have that VM loaded automatically.
-
-	![12i85vgl.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/12i85vgl.jpg)
-- Throughout the lab, you will see green text with a letter **T** in a square to the left.  This indicates that you can **click on the text** and it will **type it for you** in the VM.  **This will save you lots of time**.
-
-	![cnyu1tdi.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/cnyu1tdi.jpg)
-- You will also see Blue Click here links with a lightening bolt that will launch applications for you.  Alternate instructions are typically also provided below these links.
-
-	![m2zvmfhk.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/m2zvmfhk.jpg)
-- The last interactive element you will see throughout the lab is the **Open Screenshot** text below many steps.  To reduce clutter, most screenshots have been configured to launch in a popup window.  The only ones left visible are ones that could cause issues if they are missed or if there are multiple elements that are easier to understand with visual representation.
-
-	![n4cqn070.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/n4cqn070.jpg)
-
-## Additional Information
-
-There are also Knowledge Items, Notes, and Hints throughout the lab.
-
-- Knowledge Items are used to provide additional information about a topic related to the task or step.  These are often collapsed to reduce the amount of space they use, but it is recommended that you review these items if you want more information on the subject.
-
-	![8g9nif1j.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/8g9nif1j.jpg)
-- Notes are steps that do not require action or modification of any elements.  This includes general observations and reviewing the results of previous steps.
-
-	![kxrbzsr2.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/kxrbzsr2.jpg)
-- Hints are recommendations or observations that help with the completion of a step.
-
-	![w11x99oo.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/w11x99oo.jpg)
-===
+https://aka.ms/emailkevin
 
 # Exercise 1: Configuring Azure Information Protection Policy
 
 This exercise demonstrates using the Azure Information Protection blade in the Azure portal to configure policies and sub-labels.  We will create a new sub-label and configure protection and then modify an existing sub-label.  We will also create a label that will be scoped to a specific group.
 
 We will next configure AIP Global Policy to use the General sub-label as default, and finally, we will configure a scoped policy to use the new scoped label by default for Word, Excel, and PowerPoint while still using General as default for Outlook.
-===
+
 # Creating, Configuring, and Modifying Sub-Labels
 
 In this task, we will configure a label protected for internal audiences that can be used to help secure sensitive data within your company.  By limiting the audience of a specific label to only internal employees, you can dramatically reduce the risk of unintentional disclosure of sensitive data and help reduce the risk of successful data exfiltration by bad actors.  However, there are times when external collaboration is required, so we will configure a label to match the name and functionality of the Do Not Forward button in Outlook.  This will allow users to more securely share sensitive information outside the company to any recipient.  By using the name Do Not Forward, the functionality will also be familiar to what previous users of AD RMS or Azure RMS may have used in the past.
 
-1. Switch to the **@lab.VirtualMachine(Client1).SelectLink** virtual machine.
+1. Switch to the Client1 virtual machine.
 
-2. @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://portal.azure.com`) to launch the Azure Portal in a new Edge InPrivate window.
-
-	> INFO: If the command above does not work, right-click on **Edge** in the taskbar and click on **New InPrivate window**.
+2. Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
 	>
 	>![jnblioyn.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/jnblioyn.jpg)
 	>
@@ -110,7 +72,7 @@ In this task, we will configure a label protected for internal audiences that ca
 	>
 	>![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/cznh7i2b.jpg)
 
-1. Log in using **@lab.CloudCredential(81).Username** and the password **@lab.CloudCredential(81).Password**.
+1. Log in using **your Global Admin Username** and the password **your Global Admin Password**.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/gerhxqeq.jpg)
 
@@ -195,7 +157,7 @@ In this task, we will configure a label protected for internal audiences that ca
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/98pvhwdv.jpg)
 
-===
+
 
 # Configuring Global Policy
 
@@ -231,7 +193,7 @@ In this task, we will assign the new sub-label to the Global policy and configur
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/m6e4r2u2.jpg)
 
-===
+
 
 # Creating a Scoped Label and Policy
 
@@ -314,7 +276,7 @@ Now that you have learned how to work with global labels and policies, we will c
 
 1. Click on the **X** in the upper right-hand corner to close the policy.
 
-===
+
 
 # Configuring Advanced Policy Settings
 
@@ -340,7 +302,7 @@ There are many advanced policy settings that are useful to tailor your Azure Inf
 
 	> NOTE: This and additional Advanced Policy Settings can be found at https://docs.microsoft.com/en-us/azure/information-protection/rms-client/client-admin-guide-customizations
 
-===
+
 
 # Defining Recommended and Automatic Conditions
 
@@ -392,7 +354,7 @@ One of the most powerful features of Azure Information Protection is the ability
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/wzwfc1l4.jpg)
 
-===
+
 
 # Exercise 2: Client and Exchange Configuration
 
@@ -401,12 +363,12 @@ Now that we have defined some basic AIP Policies, we need to configure some clie
 Office 365 and the latest GA AIP Client (1.37.19.0) have already been installed on these systems to save time in this lab.  In your production environment, you will need to install the AIP Client manually for testing or using an Enterprise Deployment Tool like System Center Configuration Manager for widespread deployment.
 
 We will also be disabling a mail flow rule in the Exchange Admin Center to allow mail to be sent outside the tenant.  This will allow us to test Do Not Forward and Office 365 Message Encryption scenarios.
-===
+
 # Configuring Applications
 
 In this task, we will configure Word and Outlook for 3 test users.  These users are Alan Steiner (AlanS) and Amy Alberts (AmyA) who we have defined as members of the Legal group, and Eric Grimes (EricG).  This will allow us to demonstrate the differences between the global and scoped policy and demonstrate some of the protection features of Azure Information Protection in the next exercise.
 
-1. On @lab.VirtualMachine(Client1).SelectLink, minimize the Edge window and @[Click here](`"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.EXE"`) to launch **Microsoft Word** (This may take a few seconds).
+1. On SQL1, minimize the Edge window and launch **Microsoft Word** (This may take a few seconds).
 
 	> NOTE: If the automation does not work, start **Microsoft Word** by clicking on the icon in the taskbar.
 	>
@@ -419,7 +381,7 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 1. In the Sign in set up Office dialog, click Sign in.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/4yb3mnd1.jpg)
-1. In the Activate Office dialog, enter **AlanS@@lab.CloudCredential(81).TenantName** and press **Next**.
+1. In the Activate Office dialog, enter **AlanS@yourtenant.onmicrosoft.com** and press **Next**.
 
 1. In the Enter password dialog, enter **pass@word1** and click **Sign in**.
 
@@ -429,12 +391,12 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 
 1. Finally, click **Done** to complete the setup.
 1. Wait for the Getting Office ready for you dialog to close and then **Close Microsoft Word**
-1. Next, @[Click here](`"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE"`) to start **Microsoft Outlook** or click on the icon in the taskbar.
+1. Next, start **Microsoft Outlook**.
 
 	![vlu3sb64.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/vlu3sb64.jpg)
 1. Click **Connect** and let Outlook configure.
 
-	> INFO: Login details for **AlanS@@lab.CloudCredential(81).TenantName** should be automatically populated. If you still see **Install@Contoso.com**, close Microsoft Outlook and reopen.
+	> INFO: Login details for **AlanS@yourtenant.onmicrosoft.com** should be automatically populated. If you still see **Install@Contoso.com**, close Microsoft Outlook and reopen.
 	>
 	> If you receive a prompt to choose an account type, click Office 365.
 	>
@@ -444,7 +406,7 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 
 	![hjmvdzvv.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/hjmvdzvv.jpg)
 
-1. Switch to **@lab.VirtualMachine(Windows10-CLI3).SelectLink** and and @[Click here](`"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.EXE"`) to launch **Microsoft Word** (This may take a few seconds).
+1. Switch to **Client2** and and launch **Microsoft Word** (This may take a few seconds).
 
 	> NOTE: If the automation does not work, start **Microsoft Word** by clicking on the icon in the taskbar.
 	>
@@ -457,7 +419,7 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 1. In the Sign in set up Office dialog, click Sign in.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/4yb3mnd1.jpg)
-1. In the Activate Office dialog, enter **AmyA@@lab.CloudCredential(81).TenantName** and press **Next**.
+1. In the Activate Office dialog, enter **AmyA@yourtenant.onmicrosoft.com** and press **Next**.
 
 1. In the Enter password dialog, enter **pass@word1** and click **Sign in**.
 
@@ -467,12 +429,12 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 
 1. Finally, click **Done** to complete the setup.
 1. Wait for the Getting Office ready for you dialog to close and then **Close Microsoft Word**
-1. Next, @[Click here](`"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE"`) to start **Microsoft Outlook** or click on the icon in the taskbar.
+1. Next, start **Microsoft Outlook**.
 
 	![vlu3sb64.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/vlu3sb64.jpg)
 1. Click **Connect** and let Outlook configure.
 
-	> INFO: Login details for **AmyA@@lab.CloudCredential(81).TenantName** should be automatically populated. If you still see **Install@Contoso.com**, close Microsoft Outlook and reopen.
+	> INFO: Login details for **AmyA@yourtenant.onmicrosoft.com** should be automatically populated. If you still see **Install@Contoso.com**, close Microsoft Outlook and reopen.
 	>
 	> If you receive a prompt to choose an account type, click Office 365.
 	>
@@ -482,7 +444,7 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/amepnw76.jpg)
 
-1. Switch to **@lab.VirtualMachine(Windows10-CLI4).SelectLink** and @[Click here](`"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.EXE"`) to launch **Microsoft Word** (This may take a few seconds).
+1. Switch to **Client3** and launch **Microsoft Word** (This may take a few seconds).
 
 	> NOTE: If the automation does not work, start **Microsoft Word** by clicking on the icon in the taskbar.
 	>
@@ -495,7 +457,7 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 1. In the Sign in set up Office dialog, click Sign in.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/4yb3mnd1.jpg)
-1. In the Activate Office dialog, enter **EricG@@lab.CloudCredential(81).TenantName** and press **Next**.
+1. In the Activate Office dialog, enter **EricG@yourtenant.onmicrosoft.com** and press **Next**.
 
 1. In the Enter password dialog, enter **pass@word1** and click **Sign in**.
 
@@ -505,12 +467,12 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 
 1. Finally, click **Done** to complete the setup.
 1. Wait for the Getting Office ready for you dialog to close and then **Close Microsoft Word**
-1. Next, @[Click here](`"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE"`) to start **Microsoft Outlook** or click on the icon in the taskbar.
+1. Next, start **Microsoft Outlook**.
 
 	![vlu3sb64.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/vlu3sb64.jpg)
 1. Click **Connect** and let Outlook configure.
 
-	> INFO: Login details for **EricG@@lab.CloudCredential(81).TenantName** should be automatically populated. If you still see **Install@Contoso.com**, close Microsoft Outlook and reopen.
+	> INFO: Login details for **EricG@yourtenant.onmicrosoft.com** should be automatically populated. If you still see **Install@Contoso.com**, close Microsoft Outlook and reopen.
 	>
 	> If you receive a prompt to choose an account type, click Office 365.
 	>
@@ -520,11 +482,11 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/hjmvdzvv.jpg)
 
-===
+
 
 # Configuring Exchange Online Mail Flow Rules
 
-1. Switch to **@lab.VirtualMachine(Client1).SelectLink**.
+1. Switch to Client1.
 
 1. @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://outlook.office365.com/ecp/`) to launch the Exchange Admin Center.
 
@@ -533,24 +495,24 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 	>![jnblioyn.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/jnblioyn.jpg)
 	>In the InPrivate window, navigate to **https://outlook.office365.com/ecp/**.
 
-1. Log in using **@lab.CloudCredential(81).Username** and the password **@lab.CloudCredential(81).Password**.
+1. Log in using **your Global Admin Username** and the password **your Global Admin Password**.
 
 1. In the Exchange admin center, click on **mail flow** on the left, then uncheck the box next to **Delete if sent outside the organization**.
 
 	![kgoqkfrs.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/kgoqkfrs.jpg)
 1. Wait for the view to update showing the disabled rule, then **minimize this window** and save it for when we add new rules in Exercise 4.
 
-===
+
 
 # Exercise 3: Testing AIP Policies
 
 Now that you have 3 test systems with users being affected by different policies configured, we can start testing these policies.  This exercise will run through various scenarios to demonstrate the use of AIP global and scoped policies and show the functionality of recommended and automatic labeling.
-===
+
 # Testing User Defined Permissions
 
 One of the most common use cases for AIP is the ability to send emails using User Defined Permissions (Do Not Forward). In this task, we will send an email using the Do Not Forward label to test that functionality.
 
-1. Switch to @lab.VirtualMachine(Windows10-CLI4).SelectLink.
+1. Switch to Client3.
 1. In Microsoft Outlook, click on the **New email** button.
 
 	![6wan9me1.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/6wan9me1.jpg)
@@ -575,7 +537,7 @@ One of the most common use cases for AIP is the ability to send emails using Use
 	>
 	> ![6v6duzbd.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/6v6duzbd.jpg)
 
-1. Switch over to @lab.VirtualMachine(Client1).SelectLink or @lab.VirtualMachine(Windows10-CLI3).SelectLink and review the email in Alan or Amy’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
+1. Switch over to SQL1 or Client2 and review the email in Alan or Amy’s Outlook.  You will notice that the email is automatically shown in Outlook natively.
 
 	![0xby56qt.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/0xby56qt.jpg)
 
@@ -606,18 +568,18 @@ One of the most common use cases for AIP is the ability to send emails using Use
 	>After using either of these authentication methods, the user will see a portal experience like the one shown below.
 	>
 	>![3zi4dlk9.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/3zi4dlk9.jpg)
-===
+
 
 # Testing Global Policy
 
 In this task, we will create a document and send an email to demonstrate the functionality defined in the Global Policy.
 
-1. Switch to @lab.VirtualMachine(Windows10-CLI4).SelectLink.
+1. Switch to Client3.
 1. In Microsoft Outlook, click on the **New email** button.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/6wan9me1.jpg)
 
-1. Send an email to Alan, Amy, and yourself (**AlanS;AmyA;@lab.User.Email**).  For the **Subject** and **Body** type **Test Contoso Internal Email**.
+1. Send an email to Alan, Amy, and yourself (**AlanS;AmyA;your email address**).  For the **Subject** and **Body** type **Test Contoso Internal Email**.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/9gkqc9uy.jpg)
 
@@ -628,7 +590,7 @@ In this task, we will create a document and send an email to demonstrate the fun
 1. Click on **Confidential** and then **Contoso Internal** and click **Send**.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/yhokhtkv.jpg)
-1. On @lab.VirtualMachine(Client1).SelectLink or @lab.VirtualMachine(Windows10-CLI3).SelectLink, observe that you are able to open the email natively in the Outlook client. Also observe the **header text** that was defined in the label settings.
+1. On SQL1 or Client2, observe that you are able to open the email natively in the Outlook client. Also observe the **header text** that was defined in the label settings.
 
 	![bxz190x2.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/bxz190x2.jpg)
 
@@ -636,13 +598,13 @@ In this task, we will create a document and send an email to demonstrate the fun
 
 	![52hpmj51.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/52hpmj51.jpg)
 
-===
+
 
 # Testing Scoped Policy
 
 In this task, we will create a document and send an email from one of the users in the Legal group to demonstrate the functionality defined in the first exercise. We will also show the behavior of the No Default Label policy on documents.
 
-1. Switch to @lab.VirtualMachine(Client1).SelectLink.
+1. Switch to SQL1.
 1. In Microsoft Outlook, click on the **New email** button.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/ldjugk24.jpg)
@@ -651,10 +613,10 @@ In this task, we will create a document and send an email from one of the users 
 1. In the Sensitivity Toolbar, click on **Highly Confidential** and the **Legal Only** sub-label, then click **Send**.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/ny1lwv0h.jpg)
-1. Switch to @lab.VirtualMachine(Windows10-CLI3).SelectLink and click on the email.  You should be able to open the message natively in the client as AmyA.
+1. Switch to Client2 and click on the email.  You should be able to open the message natively in the client as AmyA.
 
 	![qeqtd2yr.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/qeqtd2yr.jpg)
-1. Switch to @lab.VirtualMachine(Windows10-CLI4).SelectLink and click on the email. You should be unable to open the message as EricG.
+1. Switch to Client3 and click on the email. You should be unable to open the message as EricG.
 
 	![6y99u8cl.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/6y99u8cl.jpg)
 
@@ -666,13 +628,13 @@ In this task, we will create a document and send an email from one of the users 
 	>
 	>![htjesqwe.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/htjesqwe.jpg)
 
-===
+
 
 # Testing Recommended and Automatic Classification
 
 In this task, we will test the configured recommended and automatic conditions we defined in Exercise 1.  Recommended conditions can be used to help organically train your users to classify sensitive data appropriately and provides a method for testing the accuracy of your dectections prior to switching to automatic classification.  Automatic conditions should be used after thorough testing or with items you are certain need to be protected. Although the examples used here are fairly simple, in production these could be based on complex regex statements or only trigger when a specific quantity of sensitive data is present.
 
-1. Switch to @lab.VirtualMachine(Windows10-CLI4).SelectLink and @[Click here](`"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.EXE"`) to launch **Microsoft Word**.
+1. Switch to Client3 and launch **Microsoft Word**.
 1. In Microsoft Word, create a new **Blank document** and type **My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368** and **save** the document.
 
 	> [!NOTE] This card number is a fake number that was generated using the Credit Card Generator for Testing at https://developer.paypal.com/developer/creditCardGenerator/.  The Microsoft Classification Engine uses the Luhn Algorithm to prevent false positives so when testing, please make sure to use valid numbers.
@@ -704,7 +666,7 @@ In this task, we will test the configured recommended and automatic conditions w
 	>![yv0afeow.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/yv0afeow.jpg)
 
 1. In the email, click **Send**.
-===
+
 
 # Exercise 4: Exchange Online IRM Capabilities
 
@@ -714,9 +676,9 @@ Exchange Online can work in conjunction with Azure Information Protection to pro
 
 In this task, we will configure a mail flow rule to detect credit card information traversing the network in the clear and encrypt it using the Encrypt Only RMS Template.  We will also create a mail flow rule to prevent messages classified as Confidential \ Contoso Internal from being sent to external recipients.
 
-1. Switch to @lab.VirtualMachine(Client1).SelectLink and restore the **Exchange admin center** browser window.
+1. Switch to SQL1 and restore the **Exchange admin center** browser window.
 
-	> NOTE: If you closed the window, @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://outlook.office365.com/ecp/`) to open an Edge InPrivate window and navigate to **https://outlook.office365.com/ecp/** and log in using **@lab.CloudCredential(81).Username** and the password **@lab.CloudCredential(81).Password**.
+	> NOTE: If you closed the window, @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://outlook.office365.com/ecp/`) to open an Edge InPrivate window and navigate to **https://outlook.office365.com/ecp/** and log in using **your Global Admin Username** and the password **your Global Admin Password**.
 
 1. Ensure you are under **mail flow** > **rules**, then click on the **plus icon** and click **Create a new rule...**
 
@@ -805,22 +767,22 @@ In this task, we will configure a mail flow rule to detect credit card informati
 
 	![lgg2r4se.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/lgg2r4se.jpg)
 
-===
+
 
 # Demonstrating Exchange Online Mail Flow Rules
 
 In this task, we will send emails to demonstrate the results of the Exchange Online mail flow rules we configured in the previous task.  This will demonstrate some ways to protect your sensitive data and ensure a positive user experience with the product.
 
-1. Switch to @lab.VirtualMachine(Windows10-CLI4).SelectLink.
+1. Switch to Client3.
 1. In Microsoft Outlook, click on the **New email** button.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/6wan9me1.jpg)
 
-1. Send an email to Alan, Amy, and yourself (**AlanS;AmyA;@lab.User.Email**).  For the **Subject**, type **Test Credit Card Email** and for the **Body**, type **My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368**, then click **Send**.
+1. Send an email to Alan, Amy, and yourself (**AlanS;AmyA;your email address**).  For the **Subject**, type **Test Credit Card Email** and for the **Body**, type **My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368**, then click **Send**.
 
 	> INFO: Notice that there is a policy tip that has popped up to inform you that there is a credit card number in the email and it is being shared outside the organization.  This type of policy tip can be defined with the Office 365 Security and Compliance center and was pre-staged in the demo tenants we are using.
 
-1. Switch to @lab.VirtualMachine(Client1).SelectLink and review the received email.
+1. Switch to SQL1 and review the received email.
 
 	![pidqfaa1.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/pidqfaa1.jpg)
 
@@ -844,12 +806,12 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 1. In the Editing policy settings blade, disable the switch next to **Items containing 1-9 credit card numbers shared externally** and click **Save**.
 
 ![5y5gg696.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/5y5gg696.jpg)
-1. Return to @lab.VirtualMachine(Windows10-CLI4).SelectLink.
+1. Return to Client3.
 1. In Microsoft Outlook, click on the **New email** button.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/6wan9me1.jpg)
 
-1. Send an new email to Alan, Amy, and yourself (**AlanS;AmyA;@lab.User.Email**).  For the **Subject**, type **Test Credit Card Email 2** and for the **Body**, type **My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368**, then click **Send**.
+1. Send an new email to Alan, Amy, and yourself (**AlanS;AmyA;your email address**).  For the **Subject**, type **Test Credit Card Email 2** and for the **Body**, type **My AMEX card number is 344047014854133. The expiration date is 09/28, and the CVV is 4368**, then click **Send**.
 1. Wait a few moments for the DLP policy to recognize the credit card number and external email and then in the DLP Policy Tip, click **override**.
 
 	![aezwvoir.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/aezwvoir.jpg)
@@ -860,7 +822,7 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 1. Next, in Microsoft Outlook, click on the **New email** button.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/6wan9me1.jpg)
-1. Send an email to Alan, Amy, and yourself (**AlanS;AmyA;@lab.User.Email**).  For the **Subject** and **Body** type **Another Test Contoso Internal Email**.
+1. Send an email to Alan, Amy, and yourself (**AlanS;AmyA;your email address**).  For the **Subject** and **Body** type **Another Test Contoso Internal Email**.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/d476fmpg.jpg)
 
@@ -877,22 +839,22 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 
 > NOTE: There are many other use cases for Exchange Online mail flow rules but this should give you a quick view into what is possible and how easy it is to improve the security of your sensitive data through the use of Exchange Online mail flow rules and Azure Information Protection.
 
-===
+
 
 # Exercise 5: SharePoint IRM Configuration
 
 In this exercise, you will configure SharePoint Online Information Rights Management (IRM) and configure a document library with an IRM policy to protect documents that are downloaded from that library.
 
-===
+
 # Enable Information Rights Management in SharePoint Online
 
 In this task, we will enable Information Rights Management in SharePoint Online.
 
-1. Switch to **@lab.VirtualMachine(Windows10-CLI4).SelectLink**.
+1. Switch to **Client3**.
 
 1. @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://admin.microsoft.com/AdminPortal/Home#/homepage`) to launch an Edge InPrivate session to **https://admin.microsoft.com/AdminPortal/Home#/homepage**.
 
-1. If needed, log in using **@lab.CloudCredential(81).Username** and the password **@lab.CloudCredential(81).Password**.
+1. If needed, log in using **your Global Admin Username** and the password **your Global Admin Password**.
 
 1. Hover over the **Admin centers** section of the bar on the left and choose **SharePoint**.
 
@@ -912,7 +874,7 @@ In this task, we will enable Information Rights Management in SharePoint Online.
 
 1. Keep the browser open and go to the next task.
  
-===
+
 
 # Site Creation and Information Rights Management Integration
 
@@ -969,13 +931,13 @@ In this task, we will create a new SharePoint site and enable Information Rights
 
 1. Leave the browser open and continue to the next task.
  
-===
+
 
 # Uploading Content to the Document Library
 
 Create an unprotected Word document, label it as Internal, and upload it to the document library.
 
-1. @[Click here](`"C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.EXE"`) to launch **Microsoft Word**.
+1. launch **Microsoft Word**.
 1. Create a new **Blank document**.
 
 	>[!NOTE] Notice that by default the document is labeled as the unprotected classification **General**.
@@ -1011,7 +973,7 @@ Create an unprotected Word document, label it as Internal, and upload it to the 
 	>INFO: Notice that you are unable to upload the file because it cannot be protected.
 	>
 	>![432hu3pi.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/432hu3pi.jpg)
-===
+
 
 # SharePoint IRM Functionality
 
@@ -1023,7 +985,7 @@ Files that are uploaded to a SharePoint IRM protected document library are prote
 1. In the Send Link dialog, type **AmyA** and click on **Amy Alberts** then **Send**.
 
 	![j6w1v4z9.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/j6w1v4z9.jpg)
-1. Switch to @lab.VirtualMachine(Windows10-CLI3).SelectLink.
+1. Switch to Client2.
 1. Open Outlook and click on the email from CIE Administrator, then click on the **Open** link.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/v39ez284.jpg)
@@ -1035,7 +997,7 @@ Files that are uploaded to a SharePoint IRM protected document library are prote
 	![4uya6mro.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/4uya6mro.jpg)
 	>[!NOTE] These permissions are based on the level of access that they user has to the document library.  In a production environment most users would likely have less rights than shown in this example.
 
-===
+
  
 # Exercise 6: Azure Information Protection Scanner
 
@@ -1046,21 +1008,21 @@ In this exercise, you will use PowerShell Scripts to create an account for scann
 > [!NOTE] This exercise is based on the September GA version of the AIP scanner (1.37.19.0). The AIP client and Azure AD PowerShell cmdlets have been installed on SQL1 to save time.
 
 ![7fs9fx6b.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/7fs9fx6b.jpg)
-===
+
 
 # Connecting to Azure AD and Creating Service Account
 
 In this task, we will connect to Azure AD Powershell using the provided tenant credentials and create a cloud based service account for use with the Azure Information Protection scanner.
 
-1. Switch to @lab.VirtualMachine(SQL1).SelectLink and (if necessary) log in using the username **@lab.VirtualMachine(SQL1).Username** and the password **@lab.VirtualMachine(SQL1).Password**.
+1. Switch to SQL1 and (if necessary) log in using the username **Contoso\Install** and the password **Somepass1**.
 1. Right-click on the **PowerShell** icon in the taskbar and click on **Run as Administrator**.
 
 	![7to6p334.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/7to6p334.jpg)
 1. In PowerShell, run **Connect-AzureAD** and use the username and password below.
 
-	**@lab.CloudCredential(81).Username**
+	**your Global Admin Username**
 
-	**@lab.CloudCredential(81).Password**
+	**your Global Admin Password**
 
 1. Next, we must build the PasswordProfile object for use when creating the cloud service account.  This is done by running the commands below.
 
@@ -1072,9 +1034,9 @@ In this task, we will connect to Azure AD Powershell using the provided tenant c
 
 1. Now, we can create the cloud service account using the command below.
 
-    **New-AzureADUser -AccountEnabled $True -DisplayName "AIP Scanner Cloud Service" -PasswordProfile $PasswordProfile -MailNickName "AIPScanner" -UserPrincipalName "AIPScanner@@lab.CloudCredential(81).TenantName"**
+    **New-AzureADUser -AccountEnabled $True -DisplayName "AIP Scanner Cloud Service" -PasswordProfile $PasswordProfile -MailNickName "AIPScanner" -UserPrincipalName "AIPScanner@yourtenant.onmicrosoft.com"**
 
-===
+
 
 # Installing the AIP Scanner Service
 
@@ -1103,7 +1065,7 @@ The first step in configuring the AIP Scanner is to install the service and conn
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/ek9jsd0a.jpg)
 
-===
+
 
 # Creating Azure AD Applications for the AIP Scanner
 
@@ -1148,7 +1110,7 @@ Now that you have installed the scanner, you need to get an Azure AD token for t
 	![zgt5ikxl.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/zgt5ikxl.jpg)
 1. When prompted, enter the username **Contoso\AIPScanner** and password **Somepass1** and click **OK**.
 1. Paste the copied Set-AIPAuthentication command into this window and run it.
-1. When prompted, enter the user **AIPScanner@@lab.CloudCredential(81).TenantName** and the password **Somepass1**
+1. When prompted, enter the user **AIPScanner@yourtenant.onmicrosoft.com** and the password **Somepass1**
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/qfxn64vb.jpg)
 1. In the Permissions requested window, click **Accept**.
@@ -1161,13 +1123,13 @@ Now that you have installed the scanner, you need to get an Azure AD token for t
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/y2bgsabe.jpg)
 1. In the PowerShell window, type **Restart-Service AIPScanner** and press **Enter**.
 
-===
+
 
 # Reviewing Initial Document State
 
 In this task, we will review documents in SharePoint and a file share to show that there is sensitive information sitting unprotected on the network.
 
-1. Switch to @lab.VirtualMachine(Windows10-CLI4).SelectLink and (if necessary) log in using the Install account with a password of **Somepass1**.
+1. Switch to Client3 and (if necessary) log in using the Install account with a password of **Somepass1**.
 
 2. [] @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private http://sp1/documents`) to navigate to http://sp1/documents. Provide the credentials **Install** and **Somepass1** if prompted.
 
@@ -1180,13 +1142,13 @@ In this task, we will review documents in SharePoint and a file share to show th
 	>
 	>![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/htd29fpf.jpg)
 
-===
+
 
 # Reviewing AIP Scanner Status
 
 Now that the AIP Scanner has been fully installed and authenticated, we can take a look at the initial state of the Scanner.
 
-1. Switch to @lab.VirtualMachine(SQL1).SelectLink.
+1. Switch to SQL1.
 1. In the open PowerShell window from the previous task, type **Get-AIPScannerStatus** and press **Enter**.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/jltma5e0.jpg)
@@ -1200,7 +1162,7 @@ Now that the AIP Scanner has been fully installed and authenticated, we can take
 	>
 	>This means that once I configure repositories, if I run`Start-AIPScan`the scanner would **run once**, would **identify sensitive data based only on Automatic conditions I have configured** in the portal, and if it found those, **it would not classify or protect those files**.  Over the next several tasks we will modify these settings to change the functionality of the scanner.
 
-===
+
 
 # Configuring Repositories
 
@@ -1228,7 +1190,7 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
     ```
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/n5hj5e7j.jpg)
 
-===
+
 
 # Running Sensitive Data Discovery
 
@@ -1254,7 +1216,7 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 	>
 	>![o46iabfu.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/o46iabfu.jpg)
 
-1. Next, switch to @lab.VirtualMachine(Windows10-CLI4).SelectLink and @[Click here](`start \\sql1\c$\Users\aipscanner\appdata\local\Microsoft\MSIP\Scanner\Reports`) to browse to \\\sql1\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports and review the summary txt and detailed csv files available there.
+1. Next, switch to Client3 and @[Click here](`start \\sql1\c$\Users\aipscanner\appdata\local\Microsoft\MSIP\Scanner\Reports`) to browse to \\\sql1\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports and review the summary txt and detailed csv files available there.
 
 	>NOTE: Since there are no Automatic conditions configured yet, the scanner found no matches for the 100 files scanned despite 96 of them having sensitive data.
 	>
@@ -1264,13 +1226,13 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 	>
 	>![9y52ab7u.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/9y52ab7u.jpg)
 
-===
+
 
 # Configuring Automatic Conditions
 
 Now that we know what types of sensitive data we need to protect, we will configure some automatic conditions (rules) that the scanner can use to classify and protect content.
 
-1. Switch back to @lab.VirtualMachine(SQL1).SelectLink and open the browser that is logged into the Azure Portal.
+1. Switch back to SQL1 and open the browser that is logged into the Azure Portal.
 
 1. Under **classifications** on the left, click **Labels** then expand **Confidential**, and click on **Contoso Internal**.
 
@@ -1293,7 +1255,7 @@ Now that we know what types of sensitive data we need to protect, we will config
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/rimezmh1.jpg)
 1. Press the **X** in the upper right-hand corner to close the Label: Contoso Internal blade.
 
-===
+
 
 # Enforcing Configured Rules
 
@@ -1312,7 +1274,7 @@ In this task, we will se the AIP scanner to enforce the conditions we set up in 
 	>
 	>![k3rox8ew.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/k3rox8ew.jpg)
 	>
-	>If we switch back to @lab.VirtualMachine(Windows10-CLI4).SelectLink and look in the reports directory we opened previously, you will notice that the old scan reports are zipped in the directory and only the most recent results aare showing.
+	>If we switch back to Client3 and look in the reports directory we opened previously, you will notice that the old scan reports are zipped in the directory and only the most recent results aare showing.
 	>
 	>![s8mn092f.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/s8mn092f.jpg)
 	>
@@ -1323,13 +1285,13 @@ In this task, we will se the AIP scanner to enforce the conditions we set up in 
 	>
 	>![Open Fullscreen](6waou5x3.jpg)
 
-===
+
 
 # Reviewing Protected Documents
 
 Now that we have Classified and Protected documents using the scanner, we can review the documents we looked at previously to see their change in status.
 
-1. Switch to @lab.VirtualMachine(Client1).SelectLink and (if necessary) log in using the Install account with a password of **Somepass1**.
+1. Switch to SQL1 and (if necessary) log in using the Install account with a password of **Somepass1**.
 
 2. [] @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private http://sp1/documents`) to navigate to ***http://sp1/documents***. Provide the credentials **Install** and **Somepass1** if prompted.
 
@@ -1343,7 +1305,7 @@ Now that we have Classified and Protected documents using the scanner, we can re
 	>![s1okfpwu.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/s1okfpwu.jpg)
 
 
-===
+
 
 # CONGRATULATIONS!
 
