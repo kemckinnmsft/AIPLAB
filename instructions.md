@@ -35,14 +35,15 @@ This lab was developed for use in a structured VM environment with the following
 - Windows Server 2016 Domain Controller (DC1) (Deployed with contoso.com root domain)
 	- Provisioned On-Premises admin account named **Contoso\Install** with the password **Somepass1**
 	- Provisioned On-Premises AIP Scanner account named **Contoso\AIPScanner** with the password **Somepass1**
-	- DNS CNAME entry pointing Fileserver.contoso.com to SP1.contoso.com
+	- DNS **CNAME** entry pointing **Fileserver**.contoso.com to **SP1**.contoso.com
 - Member Server running SQL Server 2014+ (SQL1)
+	- Azure Information Protection client (1.37.19.0) (Available at https://aka.ms/AIPClient)
 - Member Server running SharePoint 2016 (SP1)
 	- Demo PII content deployed to a document library at http://sp1/documents and in a fileshare shared as \\sp1\documents (\\fileserver\documents)
 	- Test PII content is available at https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/PII.zip
 - 3 Windows 10 Enterprise Clients (CLIENT1-3)
 	- Office 365 ProPlus
-	- Azure Information Protection client (1.37.19.0)
+	- Azure Information Protection client (1.37.19.0) (Available at https://aka.ms/AIPClient)
 
 Microsoft 365 E5 Tenant credentials will be necessary to run through all of the exercises included in this lab.  If you have access to https://demos.microsoft.com, you may use a tenant provisioned there, or your own trial/POC Microsoft 365 Tenant. The users referenced in this guide are based on demo tenants provided at Microsoft events.  Please feel free to use any 3 users in your demo tenant to complete the exercises.
 
