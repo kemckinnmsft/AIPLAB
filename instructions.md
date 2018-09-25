@@ -485,14 +485,14 @@ In this task, we will configure Word and Outlook for 3 test users.  These users 
 
 # Configuring Exchange Online Mail Flow Rules
 
+>NOTE: This may is unnecessary if using your own tenant but may be necessary using demos.microsoft.com tenants. If the rule does not exist, move to the next exercise.
+
 1. Switch to Client1.
 
-1. @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://outlook.office365.com/ecp/`) to launch the Exchange Admin Center.
+1. Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
 
-	> INFO: Right-click on **Edge** in the taskbar and click on **New InPrivate window**.
-	>
-	>![jnblioyn.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/jnblioyn.jpg)
-	>In the InPrivate window, navigate to **https://outlook.office365.com/ecp/**.
+	![jnblioyn.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/jnblioyn.jpg)
+1. In the InPrivate window, navigate to **https://outlook.office365.com/ecp/**.
 
 1. Log in using **your Global Admin Username** and **your Global Admin Password**.
 
@@ -677,9 +677,9 @@ In this task, we will configure a mail flow rule to detect credit card informati
 
 1. Switch to SQL1 and restore the **Exchange admin center** browser window.
 
-	> NOTE: If you closed the window, @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://outlook.office365.com/ecp/`) to open an Edge InPrivate window and navigate to **https://outlook.office365.com/ecp/** and log in using **your Global Admin Username** and **your Global Admin Password**.
+	> NOTE: If you closed the window, open an Edge InPrivate window and navigate to **https://outlook.office365.com/ecp/** and log in using **your Global Admin Username** and **your Global Admin Password**.
 
-1. Ensure you are under **mail flow** > **rules**, then click on the **plus icon** and click **Create a new rule...**
+2. Ensure you are under **mail flow** > **rules**, then click on the **plus icon** and click **Create a new rule...**
 
 	![5mfzbjt1.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/5mfzbjt1.jpg)
 1. In the new rule window, for **Name** type **Sensitive Data Encrypt Only**.
@@ -722,9 +722,9 @@ In this task, we will configure a mail flow rule to detect credit card informati
 
 	![w2w5c7xc.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/w2w5c7xc.jpg)
 
-	> NOTE: If you closed the azure portal, @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://portal.azure.com`) to open an Edge InPrivate window and navigate to **https://portal.azure.com**.
+	> NOTE: If you closed the azure portal, open an Edge InPrivate window and navigate to **https://portal.azure.com**.
 
-1. In the Label: Contoso Internal blade, scroll down to the Label ID and **copy** the value.
+2. In the Label: Contoso Internal blade, scroll down to the Label ID and **copy** the value.
 
 	![lypurcn5.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/lypurcn5.jpg)
 
@@ -795,8 +795,8 @@ In this task, we will send emails to demonstrate the results of the Exchange Onl
 
 	>NOTE: Note that you have received a message from your DLP policy stating that the email was not sent to the external recipient because it contained a credit card number.
 
-1. On Client 1, @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://protection.office.com`) to open an Edge InPrivate window to **https://protection.office.com**.
-1. In the Security and Compliance Center, expand **Data loss prevention** and click on **Policy**.  Then, in the Policy blade, click on the **Default Office 365 DLP Policy**.
+2. On Client 1, open an Edge InPrivate window to **https://protection.office.com**.
+3. In the Security and Compliance Center, expand **Data loss prevention** and click on **Policy**.  Then, in the Policy blade, click on the **Default Office 365 DLP Policy**.
 
 	![a2m7ryn4.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/a2m7ryn4.jpg)
 1. In the Default Office 365 DLP Policy blade, next to Policy settings, click **Edit**.
@@ -851,7 +851,7 @@ In this task, we will enable Information Rights Management in SharePoint Online.
 
 1. Switch to **Client3**.
 
-1. @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private https://admin.microsoft.com/AdminPortal/Home#/homepage`) to launch an Edge InPrivate session to **https://admin.microsoft.com/AdminPortal/Home#/homepage**.
+1. Launch an Edge InPrivate session to **https://admin.microsoft.com/AdminPortal/Home#/homepage**.
 
 1. If needed, log in using **your Global Admin Username** and **your Global Admin Password**.
 
@@ -1130,10 +1130,10 @@ In this task, we will review documents in SharePoint and a file share to show th
 
 1. Switch to Client3 and (if necessary) log in using the Install account with a password of **Somepass1**.
 
-2. [] @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private http://sp1/documents`) to navigate to http://sp1/documents. Provide the credentials **Install** and **Somepass1** if prompted.
+1. Navigate to http://sp1/documents. Provide the credentials **Install** and **Somepass1** if prompted.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/hipavcx6.jpg)
-3. [] Open one of the Contoso Purchasing Permissions documents or Run For The Cure spreadsheets. If you get a SharePoint error, please click **refresh** in the browser.
+1. Open one of the Contoso Purchasing Permissions documents or Run For The Cure spreadsheets. If you get a SharePoint error, please click **refresh** in the browser.
 
 
 
@@ -1215,7 +1215,7 @@ The next task is to configure repositories to scan.  These can be on-premises Sh
 	>
 	>![o46iabfu.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/o46iabfu.jpg)
 
-1. Next, switch to Client3 and @[Click here](`start \\sql1\c$\Users\aipscanner\appdata\local\Microsoft\MSIP\Scanner\Reports`) to browse to \\\sql1\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports and review the summary txt and detailed csv files available there.
+2. Next, switch to Client3 and browse to \\\sql1\c$\users\aipscanner\AppData\Local\Microsoft\MSIP\Scanner\Reports and review the summary txt and detailed csv files available there.
 
 	>NOTE: Since there are no Automatic conditions configured yet, the scanner found no matches for the 100 files scanned despite 96 of them having sensitive data.
 	>
@@ -1292,10 +1292,10 @@ Now that we have Classified and Protected documents using the scanner, we can re
 
 1. Switch to SQL1 and (if necessary) log in using the Install account with a password of **Somepass1**.
 
-2. [] @[Click here](`cmd.exe/c start shell:AppsFolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge -private http://sp1/documents`) to navigate to ***http://sp1/documents***. Provide the credentials **Install** and **Somepass1** if prompted.
+1. Navigate to ***http://sp1/documents***. Provide the credentials **Install** and **Somepass1** if prompted.
 
 	![Open Screenshot](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/hipavcx6.jpg)
-3. [] Open one of the Contoso Purchasing Permissions documents or Run For The Cure spreadsheets.
+1. Open one of the Contoso Purchasing Permissions documents or Run For The Cure spreadsheets.
 
 
 
@@ -1309,5 +1309,3 @@ Now that we have Classified and Protected documents using the scanner, we can re
 # CONGRATULATIONS!
 
 ![kt7yaogd.jpg](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/kt7yaogd.jpg)
-
-![MSIgnite_MVP Speaker_TW.png](https://github.com/kemckinnmsft/AIPLAB/blob/master/Content/MSIgnite_MVP Speaker_TW.png)
