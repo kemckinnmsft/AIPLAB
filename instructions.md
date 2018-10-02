@@ -51,7 +51,9 @@ Microsoft 365 E5 Tenant credentials will be necessary to run through all of the 
 
 ### Reporting Errors
 
-This is a living document and was developed from lab content so it is possible that some of the screenshots or references are not perfectly translated.  If you run into any issues in this document or the instructions do not work because of changes in the Azure interface, please reach out to me by clicking on the link below. I will make every effort to ensure that the information contained in this document are up-to-date and relevant but constructive criticism is always appreciated.
+This is a living document and was developed from lab content so it is possible that some of the screenshots or references are not perfectly translated.  **Additionally, the steps in this lab are designed around specific lab tenants so may not be applicable or may need to be altered in other test environments.  Please modify as necessary for your environment**.  
+
+If you run into any issues in this document or the instructions do not work because of changes in the Azure interface or client software, please reach out to me by clicking on the link below. I will make every effort to ensure that the instructions contained in this document are up-to-date and relevant but constructive criticism is always appreciated.
 
 https://aka.ms/AIPLabFeedback
 
